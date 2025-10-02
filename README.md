@@ -1,5 +1,5 @@
 It’s a one-shot installer that sets up the entire Documenso stack (Node.js + PostgreSQL + systemd service) with minimal manual steps.
-## NOTE: NGINX is install separately (i.e., remote or local).
+### NOTE: NGINX is install separately (i.e., remote or local).
 
 🛠️ Main Tasks Performed
 
