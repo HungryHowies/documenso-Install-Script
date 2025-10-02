@@ -65,7 +65,7 @@ Prepares .env.local (empty, but ready for overrides).
 set -euo pipefail
 
 # ------------------------------
-# Documenso 1.10_rc.5 Automated Installer
+# Documenso Install
 # ------------------------------
 
 # Install Git if missing
