@@ -253,15 +253,19 @@ npm run build
 npm run prisma:migrate-deploy
 
 # ------------------------------
-# Configure Signing Certificate
+# Configure Signing Certificate (optional)
 # ------------------------------
 SIGN_CERT="$DOCUMENSO_DIR/apps/remix/example/cert.p12"
+
 if [ -f "$SIGN_CERT" ]; then
   echo "Configuring signing certificate..."
-  sed -i "s|# NEXT_PRIVATE_SIGNING_LOCAL_FILE_PATH=.*|NEXT_PRIVATE_SIGNING_LOCAL_FILE_PATH=$SIGN_CERT|" "$ENV_FILE"
+  sed -i "s|NEXT_PRIVATE_SIGNING_LOCAL_FILE_PATH=.*|NEXT_PRIVATE_SIGNING_LOCAL_FILE_PATH=$SIGN_CERT|" "$ENV_FILE"
   sed -i "s|NEXT_PRIVATE_SIGNING_PASSPHRASE=.*|NEXT_PRIVATE_SIGNING_PASSPHRASE=\"\"|" "$ENV_FILE"
 else
-  echo "Warning: Default signing certificate not found at $SIGN_CERT"
+  echo "No signing certificate found. Skipping certificate configuration."
+  # Comment out the variables in .env to disable signing
+  sed -i "s|^NEXT_PRIVATE_SIGNING_LOCAL_FILE_PATH=.*|# NEXT_PRIVATE_SIGNING_LOCAL_FILE_PATH=|" "$ENV_FILE"
+  sed -i "s|^NEXT_PRIVATE_SIGNING_PASSPHRASE=.*|# NEXT_PRIVATE_SIGNING_PASSPHRASE=|" "$ENV_FILE"
 fi
 
 # ------------------------------
