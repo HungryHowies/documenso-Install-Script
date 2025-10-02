@@ -216,7 +216,8 @@ touch "$DOCUMENSO_DIR/.env.local"
 # Configure .env
 # ------------------------------
 echo "Configuring .env file..."
-
+SMTP_USER=""
+SMTP_PASS=""
 sed -i "s|NEXTAUTH_SECRET=.*|NEXTAUTH_SECRET=\"$NEXTAUTH_SECRET\"|" "$ENV_FILE"
 sed -i "s|NEXT_PUBLIC_WEBAPP_URL=.*|NEXT_PUBLIC_WEBAPP_URL=\"$WEBAPP_URL\"|" "$ENV_FILE"
 sed -i "s|NEXT_PRIVATE_DATABASE_URL=.*|NEXT_PRIVATE_DATABASE_URL=\"postgres://$DB_USER:$DB_PASS@127.0.0.1:5432/$DB_NAME\"|" "$ENV_FILE"
