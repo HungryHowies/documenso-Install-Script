@@ -57,6 +57,8 @@ Prepares .env.local (empty, but ready for overrides).
 * Starts Documenso as a background service.
 * Shows service status.
 * Drops you into the Documenso working directory.
+
+## Documenso Install Script.
 ```
 #!/usr/bin/env bash
 set -euo pipefail
