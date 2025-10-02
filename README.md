@@ -1,3 +1,5 @@
+It’s a one-shot installer that sets up the entire Documenso stack (Node.js + PostgreSQL + systemd service) with minimal manual steps
+
 🛠️ Main Tasks Performed
 
 ### Pre-checks & Dependencies
